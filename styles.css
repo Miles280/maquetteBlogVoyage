@@ -1,0 +1,242 @@
+:root {
+  /* Variables pour les couleurs et polices */
+  --baseColor: #ffffff; /* Couleur de base du texte */
+  --baseBgColor: #000000; /* Couleur de fond de base */
+  --titleBgColor: #102223; /* Couleur de fond des titres dans le main */
+  --sectionBgLight: #346264; /* Couleur de fond des sections (Galerie et Connectez-vous) */
+  --subtitleColor: #74a1a3; /* Couleur des sous-titres (ex : “publié le 15/01/13”) */
+  --paragraphColor: #97c2c5; /* Couleur des paragraphes dans les sections */
+  --linkLightGreen: #6df2fc; /* Couleur des liens vert très clair */
+  --fontFamily: "Roboto", sans-serif; /* Police de base pour toute la page */
+}
+
+* {
+  /* Reset de base */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Début du CSS imbriqué */
+  font-family: var(--fontFamily);
+  color: var(--baseColor);
+  background-color: var(--baseBgColor);
+
+  ul {
+    list-style: none;
+  }
+
+  header {
+    /* Début du header */
+    background-image: radial-gradient(
+        circle at top right,
+        rgba(0, 0, 0, 1),
+        transparent 70%
+      ),
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(./pictures/bg-featured-home.jpg);
+    background-position: left;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25em;
+
+    img {
+      padding: 4em;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      h1 {
+        font-size: 2.2em;
+        max-width: 20em;
+        line-height: 1.2;
+        padding-right: 3em;
+      }
+    }
+  }
+
+  main {
+    /* Début du main */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    section {
+      /* CSS qui touche toutes les sections */
+      margin: 20px;
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      h2 {
+        font-size: medium;
+        padding: 10px;
+        padding-left: 25px;
+        background-color: var(--titleBgColor);
+      }
+
+      article {
+        padding: 10px;
+        display: flex;
+        align-items: flex-start;
+
+        img {
+          margin-right: 1em;
+        }
+
+        p {
+          color: var(--paragraphColor);
+          font-size: medium;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+        }
+
+        time {
+          font-size: small;
+        }
+
+        a {
+          color: var(--linkLightGreen);
+          font-size: small;
+        }
+      }
+    }
+
+    #actu {
+      /* Section Dernières actualités*/
+      width: 55%;
+      div {
+        article {
+          max-width: 50%;
+        }
+      }
+    }
+
+    #une {
+      /* Section À la une */
+      width: 35%;
+      p {
+        font-size: 10px;
+      }
+
+      img {
+        height: 100px;
+      }
+    }
+
+    #galerie {
+      /* Section Galerie */
+      width: 55%;
+      div {
+        justify-content: space-around;
+        padding: 1em;
+        background-color: var(--sectionBgLight);
+
+        img {
+          max-width: 30%;
+        }
+      }
+    }
+
+    #reseau {
+      /* Section Connectez-vous à nous */
+      width: 35%;
+      ul {
+        background-color: var(--sectionBgLight);
+        display: flex;
+        justify-content: center;
+        padding: 1em;
+        gap: 20px;
+
+        li {
+          a {
+            color: var(--baseColor);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    /* Début du footer */
+    background-color: var(--titleBgColor);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    nav {
+      ul {
+        display: flex;
+        gap: 20px;
+
+        li {
+          a {
+            color: var(--baseColor);
+            text-decoration: none;
+            font-size: 0.9rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    header {
+      height: 28em;
+
+      img {
+        padding: 2em;
+      }
+
+      div {
+        h1 {
+          font-size: 1.8em;
+          max-width: 10em;
+          line-height: 1.2;
+          padding-right: 2em;
+        }
+      }
+    }
+
+    main {
+      padding-left: 5%;
+      padding-right: 5%;
+      #actu {
+        /* Section Dernières actualités*/
+        width: 90%;
+      }
+      #une {
+        /* Section À la une */
+        width: 90%;
+      }
+
+      #galerie {
+        /* Section Galerie */
+        width: 90%;
+      }
+
+      #reseau {
+        /* Section Connectez-vous à nous */
+        width: 90%;
+      }
+    }
+  }
+}
