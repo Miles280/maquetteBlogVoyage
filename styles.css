@@ -1,13 +1,12 @@
 :root {
   /* Variables pour les couleurs et polices */
-  --baseColor: #ffffff; /* Couleur de base du texte */
-  --baseBgColor: #000000; /* Couleur de fond de base */
-  --titleBgColor: #102223; /* Couleur de fond des titres dans le main */
-  --sectionBgLight: #346264; /* Couleur de fond des sections (Galerie et Connectez-vous) */
-  --subtitleColor: #74a1a3; /* Couleur des sous-titres (ex : “publié le 15/01/13”) */
-  --paragraphColor: #97c2c5; /* Couleur des paragraphes dans les sections */
-  --linkLightGreen: #6df2fc; /* Couleur des liens vert très clair */
-  --fontFamily: "Roboto", sans-serif; /* Police de base pour toute la page */
+  --primaryColor: rgb(33, 133, 208);
+  --primaryColorTransparent: rgba(33, 133, 208, 0.5);
+  --secondaryColor: rgb(255, 175, 56);
+  --blackTransparent: rgba(0, 0, 0, 0.7);
+  --backgroundColorGrey: rgb(240, 240, 240);
+  --boxShadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  --mainFont: "Roboto", sans-serif;
 }
 
 * {
@@ -18,224 +17,147 @@
 }
 
 body {
-  /* Début du CSS imbriqué */
-  font-family: var(--fontFamily);
-  color: var(--baseColor);
-  background-color: var(--baseBgColor);
-
-  ul {
-    list-style: none;
-  }
+  font-family: var(--mainFont);
 
   header {
-    /* Début du header */
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(0, 0, 0, 1),
-        transparent 70%
-      ),
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(./pictures/bg-featured-home.jpg);
-    background-position: left;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25em;
+    height: 26em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(./pictures/header_image.avif);
+    color: white;
+    padding: 20px;
 
-    img {
-      padding: 4em;
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 5px;
+
+      button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      #subscribe {
+        background-color: var(--primaryColor);
+        margin-right: 10em;
+      }
     }
 
     div {
+      padding-top: 5em;
       display: flex;
-      justify-content: flex-end;
+      flex-direction: column;
+      align-items: center;
+
       h1 {
-        font-size: 2.2em;
-        max-width: 20em;
-        line-height: 1.2;
-        padding-right: 3em;
+        margin-top: 20px;
+      }
+
+      p {
+        margin-top: 10px;
       }
     }
   }
 
   main {
-    /* Début du main */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 10%;
-    padding-right: 10%;
-
     section {
-      /* CSS qui touche toutes les sections */
-      margin: 20px;
+      margin: 20px 0;
 
-      div {
-        display: flex;
-        flex-wrap: wrap;
+      &#grid-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        .box {
+          background-color: var(--sectionBgLight);
+          padding: 20px;
+          text-align: center;
+        }
       }
 
-      h2 {
-        font-size: medium;
-        padding: 10px;
-        padding-left: 25px;
-        background-color: var(--titleBgColor);
-      }
-
-      article {
-        padding: 10px;
-        display: flex;
-        align-items: flex-start;
+      &#map-section {
+        position: relative;
+        .map {
+          height: 300px;
+          background-color: var(--sectionBgLight);
+        }
 
         img {
-          margin-right: 1em;
+          position: absolute;
+          bottom: 0;
+          width: 100px;
+        }
+      }
+
+      &#table-section {
+        h2 {
+          text-align: center;
         }
 
         p {
-          color: var(--paragraphColor);
-          font-size: medium;
-          margin-top: 0.5em;
-          margin-bottom: 0.5em;
+          text-align: center;
         }
 
-        time {
-          font-size: small;
-        }
+        .table {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
 
-        a {
-          color: var(--linkLightGreen);
-          font-size: small;
-        }
-      }
-    }
-
-    #actu {
-      /* Section Dernières actualités*/
-      width: 55%;
-      div {
-        article {
-          max-width: 50%;
-        }
-      }
-    }
-
-    #une {
-      /* Section À la une */
-      width: 35%;
-      p {
-        font-size: 10px;
-      }
-
-      img {
-        height: 100px;
-      }
-    }
-
-    #galerie {
-      /* Section Galerie */
-      width: 55%;
-      div {
-        justify-content: space-around;
-        padding: 1em;
-        background-color: var(--sectionBgLight);
-
-        img {
-          max-width: 30%;
-        }
-      }
-    }
-
-    #reseau {
-      /* Section Connectez-vous à nous */
-      width: 35%;
-      ul {
-        background-color: var(--sectionBgLight);
-        display: flex;
-        justify-content: center;
-        padding: 1em;
-        gap: 20px;
-
-        li {
-          a {
-            color: var(--baseColor);
-            font-size: 0.9rem;
+          div {
+            background-color: var(--sectionBgLight);
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
           }
+        }
+      }
+
+      &#background-section {
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        color: var(--baseColor);
+        text-align: left;
+        padding: 20px;
+
+        h2 {
+          margin-top: 0;
+        }
+
+        p {
+          margin: 10px 0;
+        }
+
+        button {
+          background-color: var(--sectionBgLight);
+          color: var(--baseColor);
+          padding: 10px 15px;
+          border: none;
+          cursor: pointer;
         }
       }
     }
   }
+
   footer {
-    /* Début du footer */
-    background-color: var(--titleBgColor);
-    padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--titleBgColor);
 
-    nav {
-      ul {
-        display: flex;
-        gap: 20px;
-
-        li {
-          a {
-            color: var(--baseColor);
-            text-decoration: none;
-            font-size: 0.9rem;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
+    .logo {
+      font-size: 1.5em;
     }
 
-    p {
-      font-size: 0.9rem;
-    }
-  }
-}
+    .info {
+      text-align: right;
 
-@media (max-width: 1000px) {
-  body {
-    header {
-      height: 28em;
-
-      img {
-        padding: 2em;
-      }
-
-      div {
-        h1 {
-          font-size: 1.8em;
-          max-width: 10em;
-          line-height: 1.2;
-          padding-right: 2em;
-        }
-      }
-    }
-
-    main {
-      padding-left: 5%;
-      padding-right: 5%;
-      #actu {
-        /* Section Dernières actualités*/
-        width: 90%;
-      }
-      #une {
-        /* Section À la une */
-        width: 90%;
-      }
-
-      #galerie {
-        /* Section Galerie */
-        width: 90%;
-      }
-
-      #reseau {
-        /* Section Connectez-vous à nous */
-        width: 90%;
+      p {
+        margin: 5px 0;
       }
     }
   }
