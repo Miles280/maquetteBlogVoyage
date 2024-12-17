@@ -6,31 +6,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <title>Blog Voyage</title>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
       <nav>
-        <button>Destinations</button>
-        <button>Conseils de voyage</button>
-        <button id="subscribe">S'abonner</button>
+        <a href=""><img src="./pictures/logo.png" alt="Logo Dagster" /></a>
+        <div>
+          <button>Destinations</button>
+          <button>Conseils de voyage</button>
+          <button id="subscribe">S'abonner</button>
+        </div>
       </nav>
-      <div>
+      <div id="title">
         <h1>BLOG VOYAGE</h1>
         <p>- Explorez le monde avec nous -</p>
       </div>
     </header>
     <main>
       <section id="grid">
-        <div class="box">Case 1</div>
-        <div class="box">Case 2</div>
-        <div class="box">Case 3</div>
-        <div class="box">Case 4</div>
+        <div class="box boxBg">
+          <img src="./pictures/icone4.svg" alt="Icône de douche" />
+          <h2>Explorer de nouveaux horizons</h2>
+          <p>
+            Découvrez des destinations époustouflantes et des expériences
+            uniques.
+          </p>
+        </div>
+        <div class="box">
+          <img src="./pictures/icone5.svg" alt="Icône homme qui lit" />
+          <h2>Voyagez avec notre application mobile</h2>
+          <p>Accédez à tous nos guides de voyages où que vous soyez.</p>
+        </div>
+        <div class="box">
+          <img src="./pictures/icone6.svg" alt="Icône hôtel" />
+          <h2>Un accès personnel à l'éventure</h2>
+          <p>
+            Obtenez votre carte d'accès personnelle pour des voyages
+            personnalisés.
+          </p>
+        </div>
+        <div class="box boxBg">
+          <img src="./pictures/icone7.svg" alt="Icône voiture" />
+          <h2>Équipement de voyage adapté</h2>
+          <p>
+            Utilisez le meilleur équiement de voyage pour une aventure sans
+            souci.
+          </p>
+        </div>
       </section>
       <section id="map">
         <iframe
@@ -43,45 +70,85 @@
           aria-hidden="false"
           tabindex="0"
         ></iframe>
-        <div>
-          <img
-            src="./pictures/item1.avif"
-            alt="Beau paysage de campagne avec une piscine au premier plan"
-          />
-          <img
-            src="./pictures/item2.avif"
-            alt="Jeune fille buvant du lait sur une plage"
-          />
-        </div>
+        <ul>
+          <li>
+            <p>Découvrez de nouvelles aventures</p>
+            <h2>DESTINATION EXOTIQUES</h2>
+          </li>
+          <li>
+            <p>Aventure en plein air</p>
+            <h2>EXPÉRIENCE INOUBLIABLES</h2>
+          </li>
+        </ul>
       </section>
-      <section id="table-section">
-        <h2>Un Titre</h2>
-        <p>Une phrase explicative en dessous.</p>
-        <div class="table">
-          <div>Case 1</div>
-          <div>Case 2</div>
-          <div>Case 3</div>
+      <section id="redirection">
+        <h2>Notre objectif, votre exploration</h2>
+        <p>
+          Nous vous guidons dans la planification de vos voyages pour les
+          adapter à vos rêves d'aventure.
+        </p>
+        <div>
+          <article>
+            <a href=""></a>
+            <figure>
+              <img src="./pictures/icone1.svg" alt="Icône ancre" />
+              <figcaption>Explorez le monde de vos rêves</figcaption>
+            </figure>
+          </article>
+          <article>
+            <a href=""></a>
+            <figure>
+              <img src="./pictures/icone2.svg" alt="Icône arche" />
+              <figcaption>Un large éventail de destinations</figcaption>
+            </figure>
+          </article>
+          <article>
+            <a href=""></a>
+            <figure>
+              <img src="./pictures/icone3.svg" alt="Icône pousette" />
+              <figcaption>Des guides de voyage personnels</figcaption>
+            </figure>
+          </article>
         </div>
       </section>
       <section id="newsletter">
-        <h2>Titre de la section</h2>
-        <p>Texte explicatif.</p>
-        <button>En savoir plus</button>
+        <div>
+          <h2>Blog Voyage, explorez le monde autrement</h2>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              rerum iusto quibusdam nobis, reprehenderit accusantium beatae
+              explicabo, numquam laudantium fugiat molestias earum rem possimus
+              consectetur ipsam laboriosam.
+            </p>
+            <button>Inscrivez-vous à notre newsletter</button>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
-      <img src="./pictures/logo.png" alt="Logo Dagster" />
       <div>
-        <p>ADRESSE</p>
+        <img src="./pictures/logo.png" alt="Logo Dagster" />
         <p>
-          13 rue de l'Aventure <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+          quibusdam, praesentium quo a? Quidem quis delectus quam quisquam.
+        </p>
+      </div>
+      <address>
+        <p><strong>ADRESSE</strong></p>
+        <p>
+          13 rue de l'Aventure<br />
           75001 Partout dans le monde
         </p>
-        <p>TÉLÉPHONE</p>
-        <p>+33 6 12 13 14 15</p>
+
+        <p><strong>TÉLÉPHONE</strong></p>
+        <p><a href="tel:+33612131415">+33 6 12 13 14 15</a></p>
+
         <p>MAIL</p>
-        <p>contact@blogvoyage.com</p>
-      </div>
+        <p>
+          <a href="mailto:contact@blogvoyage.com">contact@blogvoyage.com</a>
+        </p>
+      </address>
     </footer>
   </body>
 </html>
